@@ -12,7 +12,7 @@ Wallpaper colors, glass widgets, a wave dock, and a terminal that belongs to you
 
 **English** · [Русский](README.ru.md)
 
-**[Download](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.1-beta)** ·
+**[Download](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.2-beta)** ·
 [Gallery](docs/GALLERY.md) · [Report a bug](https://github.com/Ddrakkx/pigment/issues)
 
 ![Pigment terminal and widgets — renderer preview](docs/gallery/desktop-terminal.png)
@@ -51,7 +51,7 @@ transparency. `term 640 360 cava` opens another Windows Terminal window
 (width, height, optional `shell`, `logo`, `cmatrix`, `cava`, `vis`, or `clock`).
 `term-size 640 360` resizes the current Windows Terminal window, within its
 native size limits. CAVA, VIS, and the logo have no persistent instruction
-captions. These commands are newer than beta 0.1.1.
+captions. These commands are available in beta 0.1.2.
 
 Run **`music`** to arrange the rotating logo, Matrix rain, clock, CAVA, and VIS
 around Pigment's player and lyrics on the secondary display. The layout follows
@@ -98,7 +98,7 @@ is unavailable, the empty lyric area stops intercepting desktop clicks.
 Open **Music → Player style → Text**. The development build adds **Text reveal**:
 word by word, exact word timestamps only, or whole lines. Word reveal from
 ordinary line-timed LRC is approximate; exact word timestamps are used when available.
-This update is newer than the public 0.1.1 beta. Lyrics are not available
+Available in beta 0.1.2. Lyrics are not available
 for every track. Music widgets need a player that exposes Windows media controls.
 
 ## Gallery
@@ -109,14 +109,26 @@ for every track. Music widgets need a player that exposes Windows media controls
 
 [See the full gallery, including the appearance page and installer →](docs/GALLERY.md)
 
+## Updates from inside Pigment
+
+Open **Updates** to check for a new release and press **Update**. Pigment downloads
+the official installer, verifies its SHA-256, closes for installation, and starts
+again. Settings and wallpapers stay in place. Portable builds update in their
+existing folder; installer builds retain the previous installed generation.
+
+Automatic checks run after startup and every six hours. You can disable them or
+exclude beta releases. Nothing is downloaded or installed without pressing Update.
+The updater starts with **0.1.2 beta**; older versions need one manual installation.
+The update installation cycle has not yet been verified on a clean Windows system.
+
 ## Install
 
-Download from the [beta release](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.1-beta):
+Download from the [beta release](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.2-beta):
 
 | Download | Start here |
 | --- | --- |
-| **Pigment-0.1.1-beta-setup-x64.exe** | Experimental branded installer; per-user install, Start menu, optional desktop shortcut |
-| **Pigment-0.1.1-beta-windows-x64.zip** | Portable build: extract the entire archive, then run `Pigment/Pigment.exe` |
+| **Pigment-0.1.2-beta-setup-x64.exe** | Experimental branded installer; per-user install, Start menu, optional desktop shortcut |
+| **Pigment-0.1.2-beta-windows-x64.zip** | Portable build: extract the entire archive, then run `Pigment/Pigment.exe` |
 
 No Python installation is needed. Keep `_internal` next to the portable exe.
 In Pigment, open **Appearance → Glass**, choose a display, and apply the style.
@@ -146,8 +158,7 @@ before uninstalling if you want to undo it. [Installer details](docs/INSTALLER.m
 ## Downloads and support
 
 This public repository contains downloads, documentation, and the gallery.
-Application source code is maintained privately. Use the installer or
-portable build from [Releases](https://github.com/Ddrakkx/pigment/releases).
+Application source code is maintained privately.
 
 ## License
 

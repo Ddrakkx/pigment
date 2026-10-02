@@ -1,66 +1,39 @@
-# Pigment 0.1.1 beta
+# Pigment 0.1.2 beta — updates inside the app
 
-Обновление страницы проекта и установщик для Windows 11 x64.
-Код самого приложения соответствует предыдущей beta 0.1.0.
+## Download
 
-## Presentation and setup update
+- **Pigment-0.1.2-beta-setup-x64.exe** — branded Windows installer.
+- **Pigment-0.1.2-beta-windows-x64.zip** — portable build; extract the entire archive.
+- **SHA256SUMS.txt** — checksums for the binary downloads.
 
-- English project page with a Russian version beside it.
-- Expanded terminal gallery: ASCII logo, CAVA, VIS, Matrix, wave dock,
-  appearance page and English/Russian installer previews.
-- English player animation with demo lyrics.
-- Experimental branded native installer for the current Windows user,
-  Start menu shortcut and optional desktop shortcut. No Python required.
-- Installer compilation and UI preview completed; full install/update/uninstall
-  behavior is not verified. The installer is unsigned.
+## New
 
-## В этом выпуске
+- **Updates** page and tray entry: background release checks, release notes,
+  a download progress bar, and an **Update** button.
+- Installer downloads are verified against the official release SHA-256.
+- Updating waits for Pigment to close and restarts it afterward. Settings and
+  wallpapers are preserved. Portable builds keep their existing executable path.
+- Automatic checks and beta releases can be disabled independently.
+- Windows Terminal music preset opens all five effects around the player,
+  temporarily hides the desktop clock, and preserves the command terminal on exit.
+- Window movement with Win uses the latest cursor position rather than queueing
+  every movement. Lyrics can use approximate word reveal for ordinary LRC.
 
-- Подбор палитры по статичным и живым обоям, цвета Windows, Terminal,
-  радиального меню и поддерживаемых приложений.
-- Собственная панель, Пуск, обзор окон, часы, плеер, текст песни и спектр звука.
-- Три готовых оформления: Стекло, Тишина и Музыка. Предпросмотр, выбор экрана,
-  календарь с переключением месяцев и возврат своих настроек.
-- Общая библиотека обоев и лента выбора с фильтрами и сортировкой.
-- Выбор Wallpaper Engine применяется на все подключённые мониторы.
-- Исправлены повторное восстановление развёрнутого окна и загрузка превью.
-- Док различает профили приложений и свёрнутые пакетные окна Windows.
-- Анимация Terminal и cmatrix учитывают узкие и высокие окна; cava/vis
-  показывают спектр системного звука Windows через Pigment.
-- Дополнительные источники текста, чтение слов без тайминга, плавная смена
-  строк и скрытие пустого блока плеера.
-- cava и vis имеют разные рисунки: столбики с падающими пиками и симметричная
-  басовая волна. Дробная высота, быстрый удар и плавный спад вместо скачков.
-- Тексты с таймингами за пределами длительности песни и записи чужого
-  исполнителя отклоняются, даже если название совпадает.
-- Вид плеера «Текст»: исполнитель и название без карточки, слова ниже;
-  прогресс и переключение песен появляются при наведении. Название остаётся
-  на паузе и у песен без синхронизированного текста.
+## First update
 
-## Установка
+Versions before 0.1.2 do not have the updater. Install this version manually once;
+future compatible releases can be installed from the app.
 
-Распакуйте весь архив в постоянную папку и запустите `Pigment/Pigment.exe`.
-Папка `_internal` должна остаться рядом с программой. Python не требуется.
-Настройки открываются через значок Pigment в системном трее.
+## Beta status
 
-Для живых обоев нужен установленный Wallpaper Engine или Wallpaper Play.
-Часы, календарь и собственная панель работают без них. Музыкальные элементы
-используют управление медиаплеером Windows.
+The installer is unsigned. The app and installer were compiled for this release.
+No new automated test suite was run. The complete in-app download, installation,
+rollback, and restart cycle has not been verified on a clean Windows system.
+The previously documented Wallpaper Engine and lyrics limitations still apply.
 
-## Состояние beta
+[Gallery](https://github.com/Ddrakkx/pigment/blob/main/docs/GALLERY.md) ·
+[English](https://github.com/Ddrakkx/pigment) ·
+[Русский](https://github.com/Ddrakkx/pigment/blob/main/README.ru.md)
 
-В финальном прогоне 2 октября исправлен сброс вида плеера «Текст» после
-перезапуска. Пройдены 57 автоматических сценариев и отдельная проверка
-готового exe без путей к установленному Python.
-
-Известная проблема: текущий Wallpaper Engine отказал команде смены обоев
-с кодом 5; переключение в этом прогоне не подтверждено. Причина прежнего
-падения WE также остаётся неустановленной.
-
-Выпуск собран на Windows 11. Полная проверка первой установки на другом
-компьютере ещё не выполнена. Работа с приложениями и драйверами других
-производителей может отличаться. Известные проверки записаны в
-`RELEASE_CHECKS.md`.
-
-Погода и смена оформления произвольных окон сторонних приложений не входят
-в готовые стили этой версии.
+This public repository contains downloads and documentation. Application sources
+are private; GitHub's automatic source archives contain documentation only.

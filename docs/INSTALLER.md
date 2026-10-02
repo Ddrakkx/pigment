@@ -30,3 +30,18 @@ not reverted automatically; restore it inside Pigment before removing the app.
 A small cleanup helper runs from Windows Temp after the uninstaller closes.
 It retains its own executable and result log in that temporary folder.
 
+## In-app updates
+
+Starting with 0.1.2 beta, open **Updates** in Pigment. Press **Update** to download
+the installer from the official GitHub release. Pigment verifies the installer's
+SHA-256 before running it. Automatic checks do not install anything themselves.
+
+The updater waits for the app to exit and starts it again afterward. Installer
+builds install a fresh generation; portable builds replace their own program
+files in place and keep previous files in a recovery folder. Settings under
+`%LOCALAPPDATA%\Pigment` are preserved. On a portable file-replacement error,
+the updater attempts to restore the files already replaced and relaunch the app.
+
+The full update and recovery cycle has not yet been verified on a clean Windows
+installation. Versions before 0.1.2 need one manual update to gain this feature.
+
