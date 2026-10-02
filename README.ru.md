@@ -16,7 +16,9 @@
 [Инструкция](docs/GUIDE.md) ·
 [Сообщить о баге](https://github.com/Ddrakkx/pigment/issues)
 
-![Терминал и виджеты Pigment](docs/gallery/desktop-terminal.png)
+[![Музыкальный пресет Pigment — запись рабочего стола](docs/gallery/music-preset-live.jpg)](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)
+
+**[▶ Смотреть живое демо · 24 секунды](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)**
 
 </div>
 

@@ -15,7 +15,9 @@ Wallpaper colors, glass widgets, a wave dock, and a terminal that belongs to you
 **[Download](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.3-beta)** ·
 [Gallery](docs/GALLERY.md) · [Report a bug](https://github.com/Ddrakkx/pigment/issues)
 
-![Pigment terminal and widgets — renderer preview](docs/gallery/desktop-terminal.png)
+[![Pigment music preset — live desktop recording](docs/gallery/music-preset-live.jpg)](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)
+
+**[▶ Watch the live demo · 24 seconds](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)**
 
 </div>
 

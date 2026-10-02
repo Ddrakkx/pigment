@@ -2,6 +2,24 @@
 
 [Back to the project](../README.md) · [Русский](../README.ru.md)
 
+## Live desktop demo
+
+[![Live music preset recording](gallery/music-preset-live.jpg)](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)
+
+**[▶ Watch the 24-second video · 1080p / 60 fps](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)**
+
+An actual desktop recording showing `music` and `music off`, ordinary Windows
+Terminal windows, the rotating ASCII logo, Matrix, CAVA, VIS, a terminal clock
+and the lyrics player. Recorded by the project author on Windows.
+
+Настоящая запись рабочего стола: запуск и выключение `music`, логотип, Matrix,
+CAVA, VIS, часы и плеер со словами. Нажми на кадр, чтобы открыть видео.
+
+Wallpaper shown: **Warrior's Tomb | Forest Sounds** in Wallpaper Engine.
+The third-party wallpaper and music are demonstration content; their files are
+not included in Pigment. The illustrated renderer previews below are separate
+from this live recording.
+
 ## Terminal + desktop
 
 ![Terminal and desktop renderer preview](gallery/desktop-terminal.png)
