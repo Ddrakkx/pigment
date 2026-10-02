@@ -24,8 +24,23 @@ Use Windows Installed apps or `UninstallPigment.exe` in the install folder.
 The uninstaller checks the file manifest and hashes, removes only unchanged
 files belonging to this installation, and preserves modified or unrelated files.
 Owned shortcuts are removed only when their target points into the install folder.
-Settings under `%LOCALAPPDATA%\Pigment` are preserved. Windows appearance is
-not reverted automatically; restore it inside Pigment before removing the app.
+Starting with 0.1.3 beta, **Restore appearance from before Pigment** is checked
+by default. Close Pigment from its tray menu first. The uninstaller runs the
+installed app's restoration helper before scheduling file removal. It restores
+backed-up Windows colors, supported integration files and the saved lock-screen
+image, and refreshes cached system colors without starting the desktop UI.
+
+If a backup is damaged, a file or value was changed outside Pigment, or restoration
+fails, removal stops and shows the report location. Already restored entries are
+safe to retry. You can review the report, restore manually, or deliberately clear
+the checkbox to remove the app while retaining current appearance. Older installed
+versions must be updated to support this helper.
+
+Settings and backups under `%LOCALAPPDATA%\Pigment` are preserved. This restores
+only changes for which Pigment saved an original; it is not a full Windows restore
+point. Wallpaper selections, third-party app installation and later user changes
+are not rolled back. Some integrations may need to be reopened to display restored
+settings. Widgets and the dock disappear when Pigment is closed.
 
 A small cleanup helper runs from Windows Temp after the uninstaller closes.
 It retains its own executable and result log in that temporary folder.

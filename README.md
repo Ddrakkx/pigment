@@ -12,7 +12,7 @@ Wallpaper colors, glass widgets, a wave dock, and a terminal that belongs to you
 
 **English** · [Русский](README.ru.md)
 
-**[Download](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.2-beta)** ·
+**[Download](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.3-beta)** ·
 [Gallery](docs/GALLERY.md) · [Report a bug](https://github.com/Ddrakkx/pigment/issues)
 
 ![Pigment terminal and widgets — renderer preview](docs/gallery/desktop-terminal.png)
@@ -123,12 +123,12 @@ The update installation cycle has not yet been verified on a clean Windows syste
 
 ## Install
 
-Download from the [beta release](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.2-beta):
+Download from the [beta release](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.3-beta):
 
 | Download | Start here |
 | --- | --- |
-| **Pigment-0.1.2-beta-setup-x64.exe** | Experimental branded installer; per-user install, Start menu, optional desktop shortcut |
-| **Pigment-0.1.2-beta-windows-x64.zip** | Portable build: extract the entire archive, then run `Pigment/Pigment.exe` |
+| **Pigment-0.1.3-beta-setup-x64.exe** | Experimental branded installer; per-user install, Start menu, optional desktop shortcut |
+| **Pigment-0.1.3-beta-windows-x64.zip** | Portable build: extract the entire archive, then run `Pigment/Pigment.exe` |
 
 No Python installation is needed. Keep `_internal` next to the portable exe.
 In Pigment, open **Appearance → Glass**, choose a display, and apply the style.
@@ -136,8 +136,9 @@ Settings are also available from the tray icon.
 
 The installer has English and Russian UI, uses `%LOCALAPPDATA%\Programs\Pigment`,
 and does not request administrator privileges. Autostart is configured inside
-Pigment. Removal preserves settings; restore Windows styling inside Pigment
-before uninstalling if you want to undo it. [Installer details](docs/INSTALLER.md).
+Pigment. Removal preserves settings. Starting with 0.1.3 beta, the uninstaller
+offers to restore backed-up appearance by default; restoration errors stop
+removal and produce a report. [Installer details](docs/INSTALLER.md).
 
 ## Beta status
 

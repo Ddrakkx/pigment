@@ -1,39 +1,22 @@
-# Pigment 0.1.2 beta — updates inside the app
+# Pigment 0.1.3 beta
 
-## Download
+## Restore appearance during uninstall
 
-- **Pigment-0.1.2-beta-setup-x64.exe** — branded Windows installer.
-- **Pigment-0.1.2-beta-windows-x64.zip** — portable build; extract the entire archive.
-- **SHA256SUMS.txt** — checksums for the binary downloads.
+- The uninstaller now includes **Restore appearance from before Pigment**, checked by default.
+- After Pigment is closed, it restores backed-up Windows colors, supported integration settings and the saved lock-screen image before removing program files.
+- Restoration runs without starting widgets, applying new colors or opening the main app.
+- Cached classic Windows colors refresh immediately. Integrations may need to be reopened.
+- If restoration fails or an entry was changed outside Pigment, removal stops with a report. Already restored entries can be retried safely. Clearing the checkbox deliberately keeps current appearance.
+- Settings and backups remain available. Wallpaper choices and third-party applications are not rolled back; this is not a full Windows restore point.
+- Existing 0.1.2 users can install this version from **Updates**. Older installers gain the new uninstaller after updating.
 
-## New
+## Восстановление при удалении
 
-- **Updates** page and tray entry: background release checks, release notes,
-  a download progress bar, and an **Update** button.
-- Installer downloads are verified against the official release SHA-256.
-- Updating waits for Pigment to close and restarts it afterward. Settings and
-  wallpapers are preserved. Portable builds keep their existing executable path.
-- Automatic checks and beta releases can be disabled independently.
-- Windows Terminal music preset opens all five effects around the player,
-  temporarily hides the desktop clock, and preserves the command terminal on exit.
-- Window movement with Win uses the latest cursor position rather than queueing
-  every movement. Lyrics can use approximate word reveal for ordinary LRC.
+- Галочка **«Вернуть оформление до Pigment»** включена по умолчанию.
+- После закрытия Pigment восстанавливаются сохранённые изменения оформления, затем удаляются файлы приложения.
+- При ошибках и сторонних изменениях удаление останавливается и показывает путь к отчёту; резервные копии сохраняются.
+- Выбор обоев и установленные сторонние программы не откатываются.
 
-## First update
+## Beta checks
 
-Versions before 0.1.2 do not have the updater. Install this version manually once;
-future compatible releases can be installed from the app.
-
-## Beta status
-
-The installer is unsigned. The app and installer were compiled for this release.
-No new automated test suite was run. The complete in-app download, installation,
-rollback, and restart cycle has not been verified on a clean Windows system.
-The previously documented Wallpaper Engine and lyrics limitations still apply.
-
-[Gallery](https://github.com/Ddrakkx/pigment/blob/main/docs/GALLERY.md) ·
-[English](https://github.com/Ddrakkx/pigment) ·
-[Русский](https://github.com/Ddrakkx/pigment/blob/main/README.ru.md)
-
-This public repository contains downloads and documentation. Application sources
-are private; GitHub's automatic source archives contain documentation only.
+Application and installer compiled. No new automated tests were run. The complete installation/restoration/removal cycle has not been exercised on a clean Windows installation. The installer is unsigned. Previous Wallpaper Engine and lyrics-provider limitations remain.
