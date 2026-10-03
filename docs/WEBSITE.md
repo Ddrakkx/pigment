@@ -26,3 +26,7 @@ globe painter with no search results or personal data. Its silent 20-second loop
 shows one revolution at three times the native speed. It loads when visible,
 pauses offscreen or in a hidden tab, and starts as a poster when reduced motion
 is requested. The play/pause button allows a manual choice.
+
+## Expanded gallery
+
+The gallery has 22 entries and client-side category filters. Without JavaScript every image remains visible. The image dialog supports Previous/Next and arrow keys; it follows the selected gallery category. New examples include globe results, a calculator, staged window overview, wallpaper library, preset previews, lyric controls and unedited captures of the running application. Provenance and wallpaper credits are in GALLERY.md.
