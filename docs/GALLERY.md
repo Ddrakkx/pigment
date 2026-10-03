@@ -49,6 +49,14 @@ An illustrative styling scene with character rain. This is not a live cmatrix ca
 
 The real dock painter with a staged set of icons and a simulated hover position.
 
+## Globe search
+
+![Globe renderer preview](gallery/globe.png)
+
+An isolated frame from Pigment's actual globe painter. The interactive search
+interface and search results are not shown. This is a renderer preview, not a
+desktop capture. The globe uses Natural Earth public-domain map data.
+
 ## Appearance page
 
 ![Appearance page in English](gallery/appearance-en.png)
