@@ -2,6 +2,8 @@
 
 The download page is a static GitHub Pages site published from `main`, directory `/docs`.
 
+Public URL: https://ddrakkx.github.io/pigment/
+
 - Page: `index.html`
 - Styling: `style.css`
 - Gallery viewer: `app.js`

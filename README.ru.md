@@ -12,6 +12,7 @@
 ![Status](https://img.shields.io/badge/status-beta-E7C78C?style=flat-square)
 [![MIT](https://img.shields.io/badge/license-MIT-97DCC5?style=flat-square)](LICENSE)
 
+**[Сайт](https://ddrakkx.github.io/pigment/)** ·
 **[Скачать beta](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.4-beta)** ·
 [Инструкция](docs/GUIDE.md) ·
 [Сообщить о баге](https://github.com/Ddrakkx/pigment/issues)

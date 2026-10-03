@@ -12,6 +12,7 @@ Wallpaper colors, glass widgets, a wave dock, and a terminal that belongs to you
 
 **English** · [Русский](README.ru.md)
 
+**[Website](https://ddrakkx.github.io/pigment/)** ·
 **[Download](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.4-beta)** ·
 [Gallery](docs/GALLERY.md) · [Report a bug](https://github.com/Ddrakkx/pigment/issues)
 
