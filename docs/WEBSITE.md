@@ -21,5 +21,8 @@ The home page presents the entire app: Dock & Start, window overview, globe sear
 desktop widgets, Windows Terminal, music and wallpaper colors. The first screen
 uses multiple wallpaper previews. Keep the music recording as one usage example,
 below the feature overview and gallery. Do not imply that its forest wallpaper
-or third-party music comes with Pigment. The globe image uses the production
-globe painter with no search results or personal data.
+or third-party music comes with Pigment. The globe animation uses the production
+globe painter with no search results or personal data. Its silent 20-second loop
+shows one revolution at three times the native speed. It loads when visible,
+pauses offscreen or in a hidden tab, and starts as a poster when reduced motion
+is requested. The play/pause button allows a manual choice.
