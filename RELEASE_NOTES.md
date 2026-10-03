@@ -1,3 +1,13 @@
+# Pigment 0.1.5 beta
+
+- New turquoise Ribbon identity: app icons, window marks, setup artwork and browser-extension icon share one vector outline.
+- The terminal keeps the logo in 3D and uses wallpaper colors. Rotation slows down at the front, with less tilt, stable proportions and smoother character edges.
+- The website and social profile avatars now use the Ribbon mark.
+
+Application and installer builds are included. No new automated tests were run; a complete installation, update and uninstall cycle has not been exercised for this beta.
+
+---
+
 # Pigment 0.1.4 beta
 
 ## English by default

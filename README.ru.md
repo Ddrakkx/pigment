@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/site-assets/logo.png" alt="Логотип Pigment Лента" width="96" height="96">
+
 # Pigment
 
 [English](README.md) · **Русский**
@@ -13,7 +15,7 @@
 [![MIT](https://img.shields.io/badge/license-MIT-97DCC5?style=flat-square)](LICENSE)
 
 **[Сайт](https://ddrakkx.github.io/pigment/)** ·
-**[Скачать beta](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.4-beta)** ·
+**[Скачать beta](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.5-beta)** ·
 [Инструкция](docs/GUIDE.md) ·
 [Сообщить о баге](https://github.com/Ddrakkx/pigment/issues)
 
@@ -73,7 +75,7 @@ Esc в окне пресета закрывает соответствующий
 
 ## Установщик
 
-На странице релиза доступен **Pigment-0.1.4-beta-setup-x64.exe**:
+На странице релиза доступен **Pigment-0.1.5-beta-setup-x64.exe**:
 тёмное окно в стиле Pigment, English / Русский, установка для текущего
 пользователя, ярлык в Пуске и дополнительный ярлык на рабочем столе.
 Автозапуск настраивается внутри приложения.
@@ -119,7 +121,7 @@ beta-версий можно выключить. Скачивание и уст�
 
 ## Запуск за минуту
 
-1. Скачай **Pigment-0.1.4-beta-windows-x64.zip** на странице релиза.
+1. Скачай **Pigment-0.1.5-beta-windows-x64.zip** на странице релиза.
 2. Распакуй **весь архив** в постоянную папку. Оставь `_internal` рядом с exe.
 3. Запусти **Pigment/Pigment.exe**. Установка Python не нужна.
 4. В окне настроек открой **Оформление → Стекло**, выбери монитор и примени.

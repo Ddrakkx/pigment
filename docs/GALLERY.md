@@ -140,3 +140,7 @@ in [wallpaper credits](../assets/wallpapers/CREDITS.md).
 ![Actual Pigment wallpaper page after applying Shell](gallery/live-wallpaper-library.jpg)
 
 These are unedited captures of the running Pigment application. Shell and Scarlet Tree were applied to Windows for the session, then the original live wallpaper projects were restored. The desktop thumbnails and style preview inside the application are illustrative widgets, not full desktop photographs. The neutral grass thumbnail is a separate Wallpaper Engine wallpaper and is not bundled. Shell and Scarlet Tree attribution is in the linked wallpaper credits.
+## Ribbon identity
+
+`gallery/ribbon-terminal.png` and `gallery/ribbon-terminal.gif` are generated from the current 3D terminal renderer. They are preview scenes, not screenshots of a live terminal. The flat turquoise icon uses the same vector outline.
+
