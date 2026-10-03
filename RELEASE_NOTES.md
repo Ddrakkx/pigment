@@ -1,22 +1,21 @@
-# Pigment 0.1.3 beta
+# Pigment 0.1.4 beta
 
-## Restore appearance during uninstall
+## English by default
 
-- The uninstaller now includes **Restore appearance from before Pigment**, checked by default.
-- After Pigment is closed, it restores backed-up Windows colors, supported integration settings and the saved lock-screen image before removing program files.
-- Restoration runs without starting widgets, applying new colors or opening the main app.
-- Cached classic Windows colors refresh immediately. Integrations may need to be reopened.
-- If restoration fails or an entry was changed outside Pigment, removal stops with a report. Already restored entries can be retried safely. Clearing the checkbox deliberately keeps current appearance.
-- Settings and backups remain available. Wallpaper choices and third-party applications are not rolled back; this is not a full Windows restore point.
-- Existing 0.1.2 users can install this version from **Updates**. Older installers gain the new uninstaller after updating.
+- New installations open in English, regardless of the Windows language.
+- An existing explicit Russian selection is preserved.
+- Settings, tray and desktop menus, wallpaper controls, clock dates, lyrics statuses and terminal system labels now have English translations.
+- Choose **English** or **Русский** under **Desktop → More settings → Interface language**, then restart Pigment. The welcome tour also offers both languages.
+- Saved layouts, custom menu labels, wallpaper names and song lyrics retain their original text.
 
-## Восстановление при удалении
+The live music preset recording is in the [gallery](https://github.com/Ddrakkx/pigment#gallery). It shows one way to use Pigment; the app also includes wallpaper colors, desktop styles, widgets, a dock, window overview, globe search and much more.
 
-- Галочка **«Вернуть оформление до Pigment»** включена по умолчанию.
-- После закрытия Pigment восстанавливаются сохранённые изменения оформления, затем удаляются файлы приложения.
-- При ошибках и сторонних изменениях удаление останавливается и показывает путь к отчёту; резервные копии сохраняются.
-- Выбор обоев и установленные сторонние программы не откатываются.
+## Русский
 
-## Beta checks
+Теперь английский выбран по умолчанию. Ранее выбранный русский сохраняется. Язык можно сменить в **Рабочий стол → Дополнительные настройки → Язык интерфейса**, затем перезапустить Pigment.
 
-Application and installer compiled. No new automated tests were run. The complete installation/restoration/removal cycle has not been exercised on a clean Windows installation. The installer is unsigned. Previous Wallpaper Engine and lyrics-provider limitations remain.
+## Beta status
+
+Application and installer compiled. No new automated tests were run for this release. A complete fresh Windows installation, update and uninstall cycle has not been exercised. The installer remains unsigned. Previous lyrics-provider and Wallpaper Engine limitations remain.
+
+Updates and restoration during uninstall from 0.1.3 remain included. Application source is private; this public repository contains downloads, documentation and gallery assets.
