@@ -4,29 +4,22 @@ The download page is a static GitHub Pages site published from `main`, directory
 
 Public URL: https://ddrakkx.github.io/pigment/
 
-- Page: `index.html`
-- Styling: `style.css`
-- Gallery viewer: `app.js`
-- Existing preview assets: `gallery/` and `text-player-en.gif`
-- Logo and real demo: `site-assets/`
+- Page: `index.html`, styling: `style.css`, behaviour: `app.js`
+- Real captures: `shots/` (desktop and terminal screenshots, one per wallpaper)
+- Screen recordings: `site-assets/*.mp4` with `.jpg` posters, logo in `site-assets/logo.svg`
 - `.nojekyll` keeps the HTML and assets unchanged during publication.
 
 Push changes to this repository to publish the page. The application source is maintained separately in the private source repository. No bot credentials or application source belong in the website.
 
 When shipping a new release, update the installer/portable links, checksums link, release label and approximate download sizes in `index.html`.
 
-Gallery attribution is linked on the page; preserve credits and the distinction between the real desktop recording and staged renderer previews.
+## Rules for images
 
-The home page presents the entire app: Dock & Start, window overview, globe search,
-desktop widgets, Windows Terminal, music and wallpaper colors. The first screen
-uses multiple wallpaper previews. Keep the music recording as one usage example,
-below the feature overview and gallery. Do not imply that its forest wallpaper
-or third-party music comes with Pigment. The globe animation uses the production
-globe painter with no search results or personal data. Its silent 20-second loop
-shows one revolution at three times the native speed. It loads when visible,
-pauses offscreen or in a hidden tab, and starts as a poster when reduced motion
-is requested. The play/pause button allows a manual choice.
+Everything on the page is a real capture or an unedited screen recording of Pigment running on one PC — no staged renderer previews.
 
-## Expanded gallery
+- Wallpapers in the captures are Steam Workshop items for Wallpaper Engine. `app.js` lists them with links to their Workshop pages; the footer credits them and the FAQ says they do not come with Pigment.
+- Privacy: the terminal user and host name are replaced (screenshots) or blurred (recordings), and the used-memory figure is hidden. Recordings have no audio.
+- The hero switcher in `app.js` uses the six palette swatches Pigment printed in each terminal capture. The page accent follows the selected wallpaper with the same rule Pigment uses for the terminal.
+- Recordings autoplay muted only while visible; with reduced motion they stay as posters with controls.
 
-The gallery has 22 entries and client-side category filters. Without JavaScript every image remains visible. The image dialog supports Previous/Next and arrow keys; it follows the selected gallery category. New examples include globe results, a calculator, staged window overview, wallpaper library, preset previews, lyric controls and unedited captures of the running application. Provenance and wallpaper credits are in GALLERY.md.
+The older gallery in `gallery/` is kept for the README and `GALLERY.md`.

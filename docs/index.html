@@ -3,105 +3,130 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101217">
-  <meta name="description" content="Make Windows feel like yours with Pigment: a wave dock, window overview, globe search, desktop widgets, wallpaper colors, Windows Terminal styling and music tools. Free Windows 11 beta.">
-  <title>Pigment — Make Windows feel like yours.</title>
-  <link rel="icon" type="image/png" href="site-assets/logo.png?v=ribbon1">
-  <link rel="stylesheet" href="style.css?v=ribbon1">
-  <script src="app.js?v=gallery2" defer></script>
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="description" content="Pigment recolors your Windows desktop to match your wallpaper: dock, terminal, clock and accents. Works with static wallpapers and Wallpaper Engine. Free Windows 11 beta.">
+  <title>Pigment — your wallpaper picks the colors</title>
+  <link rel="icon" type="image/png" href="site-assets/logo.png?v=triad1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css?v=triad1">
+  <script src="app.js?v=triad1" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="#" aria-label="Pigment home"><img src="site-assets/logo.svg?v=ribbon1" alt="" width="48" height="48"><span>Pigment<span class="beta">beta</span></span></a>
-    <nav aria-label="Main navigation"><a href="#features">Explore</a><a href="#gallery">Gallery</a><a href="https://t.me/pigment_desktop">Telegram</a><a href="https://github.com/Ddrakkx/pigment/issues">Feedback</a></nav>
+    <a class="brand" href="#" aria-label="Pigment home"><span class="mark" aria-hidden="true"></span><span>pigment</span><span class="beta">beta</span></a>
+    <nav aria-label="Main navigation"><a href="#how">How it works</a><a href="#terminal">Terminal</a><a href="#tools">Tools</a><a href="https://github.com/Ddrakkx/pigment">GitHub</a></nav>
     <a class="header-download" href="#download">Download</a>
   </header>
+
   <main id="main">
-    <section class="hero wrap">
+    <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">For Windows 11 · Free beta</p>
-        <h1>Make Windows<br><span>feel like yours.</span></h1>
-        <p class="hero-description">A wave dock, a new way to find your windows, desktop widgets and a terminal in your colors. Pick the parts that fit how you use your PC.</p>
-        <div class="hero-actions"><a class="button primary" href="#download">Get Pigment</a><a class="text-link" href="#features">Explore the features</a></div>
-        <p class="small">Windows 11 x64 · English &amp; Russian</p>
+        <p class="prompt"><span>~</span> pigment --follow wallpaper</p>
+        <h1>Your wallpaper<br><em>picks the colors.</em></h1>
+        <p class="lead">Pigment reads whatever is on your desktop — a static image or a live Wallpaper Engine scene — and recolors the dock, terminal, clock and Windows accents to match.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#download">Get Pigment <span>free beta</span></a>
+          <a class="text-link" href="#how">See it change ↓</a>
+        </div>
+        <p class="fine">Windows 11 · x64 · English &amp; Russian</p>
       </div>
-      <div class="hero-showcase" aria-label="Different sides of Pigment">
-        <button class="showcase-main" data-image="gallery/desktop-terminal.png" data-caption="Terminal, clock and calendar · staged renderer preview with demo system information"><img src="gallery/desktop-terminal.png" alt="Blue desktop with a wallpaper-colored terminal, clock and calendar" width="1440" height="900" fetchpriority="high"><span>Desktop &amp; terminal <small>Renderer preview</small></span></button>
-        <button class="showcase-detail showcase-dock" data-image="gallery/dock.png" data-caption="Wave dock · production renderer with staged icons on Honeywave"><img src="gallery/dock.png" alt="Magnifying dock icons on an orange and blue desktop" width="1440" height="900"><span>Wave dock <small>Your apps, within reach</small></span></button>
-        <button class="showcase-detail showcase-matrix" data-image="gallery/matrix.png" data-caption="Terminal styling · illustrative character rain on Scarlet Tree"><img src="gallery/matrix.png" alt="Warm pink and orange desktop with a styled terminal" width="1440" height="900"><span>A different palette <small>Same Pigment</small></span></button>
-      </div>
+
+      <figure class="hero-video">
+        <video autoplay muted loop playsinline preload="auto" poster="site-assets/recolor.jpg" width="1920" height="1080" aria-label="Screen recording: switching wallpapers with Ctrl+Alt+W while the terminals, clock, player and visualizers recolor to match"><source src="site-assets/recolor.mp4" type="video/mp4"></video>
+        <figcaption>Real screen recording, not sped up. <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>W</kbd> opens the wallpaper picker.</figcaption>
+      </figure>
     </section>
-    <nav class="feature-nav wrap" aria-label="Explore Pigment"><a href="#dock">Dock &amp; Start</a><a href="#windows">Window overview</a><a href="#search">Globe search</a><a href="#desktop">Desktop</a><a href="#terminal">Terminal</a><a href="#music">Music</a></nav>
-    <section id="features" class="features wrap section">
-      <div class="section-heading"><p class="eyebrow">The everyday desktop, your way</p><h2>Different tools.<br>One place to make them yours.</h2><p>Find an app. Switch windows. Change the atmosphere. Pigment brings these pieces together, and lets you choose what to turn on.</p></div>
-      <div class="feature-grid">
-        <article id="dock" class="feature"><span class="feature-number">01 / DOCK &amp; START</span><h3>Your apps, a little closer.</h3><p>Magnifying icons, pinned apps and running windows. Scroll when the dock fills up, change its icons, and find installed apps through Pigment’s Start menu.</p><img class="dock-preview" src="gallery/dock.png" alt="Pigment dock showing icons enlarged around the hovered app" width="1440" height="900" loading="lazy"><p class="caption">Production dock renderer with staged icons.</p></article>
-        <article id="windows" class="feature window-feature"><span class="feature-number">02 / WINDOW OVERVIEW</span><h3>See what you’re working on.</h3><p>Open a window board with live thumbnails. Pan around, zoom into a window, and return to the overview when you need the bigger picture.</p><div class="shortcut"><kbd>Win</kbd><span>+</span><kbd>Tab</kbd></div><button class="feature-shot" data-image="gallery/window-overview.webp" data-caption="Window overview · production board controls with staged demo thumbnails"><img src="gallery/window-overview.webp" alt="Window overview with three demo windows and a selected wallpaper window" width="1440" height="900" loading="lazy"><span>Open preview ↗</span></button><p class="caption">Board preview with staged thumbnails.</p></article>
-        <article id="search" class="feature"><span class="feature-number">03 / GLOBE SEARCH</span><h3>A different way to find things.</h3><p>A glowing globe with windows, apps, settings and files on one side, optional web results on the other, and a calculator above.</p><div class="shortcut"><kbd>Ctrl</kbd><span>+</span><kbd>Alt</kbd><span>+</span><kbd>Space</kbd></div><div class="globe-animation"><video id="globe-animation" class="globe-preview" muted loop playsinline preload="none" poster="site-assets/globe.png" width="720" height="480" aria-label="Pigment’s globe renderer: rotating continents made of glowing violet dots"><source data-src="site-assets/globe.mp4" type="video/mp4"></video><button id="globe-toggle" type="button" aria-controls="globe-animation" hidden>Play rotation</button></div><p class="caption">Animated globe renderer preview.</p><button class="feature-shot" data-image="gallery/globe-search.webp" data-caption="Globe search · actual interface rendered with authored demo results"><img src="gallery/globe-search.webp" alt="Globe search showing an app, a demo document and optional web results" width="1440" height="900" loading="lazy"><span>Open preview ↗</span></button><p class="caption">Search interface with demo results.</p></article>
-        <article id="desktop" class="feature"><span class="feature-number">04 / DESKTOP &amp; WIDGETS</span><h3>Choose what belongs on your desktop.</h3><p>Clocks, a calendar, glass surfaces and display-specific placement. Start with Glass, Quiet or Music, then adjust the pieces to suit your setup.</p><img class="desktop-preview" src="gallery/desktop-terminal.png" alt="Clock and calendar beside a terminal on a blue desktop" width="1440" height="900" loading="lazy"><p class="caption">Staged desktop composition with demo content.</p></article>
-        <article id="terminal" class="feature"><span class="feature-number">05 / WINDOWS TERMINAL</span><h3>Your terminal. Your colors.</h3><p>Keep using ordinary Windows Terminal, with wallpaper colors, blur and transparency. Add a rotating ASCII logo, Matrix rain, audio bars or a bass wave.</p><div class="commands"><code>neofetch</code><code>cmatrix</code><code>cava</code><code>vis</code></div><img class="terminal-preview" src="gallery/matrix.png" alt="A terminal in warm wallpaper colors" width="1440" height="900" loading="lazy"><p class="caption">Illustrative terminal styling preview.</p></article>
-        <article id="music" class="feature"><span class="feature-number">06 / MUSIC &amp; LYRICS</span><h3>Give your music some room.</h3><p>Desktop media controls, lyrics and visualizers for Windows system audio. Choose line transitions or word reveal, import your own LRC, and adjust timing for each track.</p><img class="player-preview" src="text-player-en.gif" alt="Pigment text player with animated demo lyric lines" width="820" height="360" loading="lazy"><p class="caption">Authored demo lyrics. Ordinary LRC uses approximate word timing; exact timestamps are used when available.</p><a class="text-link" href="#demo">Watch the music preset</a></article>
-        <article id="wallpapers" class="feature wallpaper-feature"><div><span class="feature-number">07 / WALLPAPERS &amp; COLORS</span><h3>Start with any atmosphere.</h3><p>Browse wallpapers, filter by color and let their palette shape your desktop and terminal. Use static wallpapers or connect Wallpaper Engine for live ones. The forest scene is just one setup.</p></div><div class="palette-examples" aria-label="Blue, warm and dark wallpaper palettes"><span class="palette blue"><i></i><i></i><i></i><i></i></span><span class="palette warm"><i></i><i></i><i></i><i></i></span><span class="palette night"><i></i><i></i><i></i><i></i></span></div><button class="feature-shot" data-image="gallery/wallpaper-library.webp" data-caption="Wallpaper library · actual settings page with bundled wallpapers and demo selection"><img src="gallery/wallpaper-library.webp" alt="Built-in wallpaper library with color filters and five different wallpapers" width="1140" height="720" loading="lazy"><span>Open preview ↗</span></button><p class="caption">Built-in wallpaper library. Select a wallpaper or narrow it down by color.</p></article>
+
+    <section id="how" class="how wrap">
+      <div class="how-steps">
+        <article><span class="step">01</span><h2>Change the wallpaper</h2><p>Use Windows, Wallpaper Engine or Pigment’s own picker on <kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>W</kbd>.</p></article>
+        <article><span class="step">02</span><h2>Pigment reads it</h2><p>It takes a palette from the wallpaper itself. For live scenes it checks what is actually on screen, so day and night cycles count too.</p></article>
+        <article><span class="step">03</span><h2>Everything follows</h2><p>Dock, Windows Terminal, clock, accent color and the rotating logo pick up the new palette.</p></article>
       </div>
-    </section>
-    <section id="gallery" class="gallery wrap section">
-      <div class="section-heading"><p class="eyebrow">A closer look</p><h2>There’s no single<br>Pigment desktop.</h2><p>23 examples across the desktop, search, terminal and music tools. Browse actual app captures, different wallpaper palettes and labeled renderer previews. Open an image to see the details.</p></div>
-      <div class="gallery-filters" role="group" aria-label="Filter gallery" hidden><button type="button" data-filter="all" aria-pressed="true">All examples</button><button type="button" data-filter="desktop" aria-pressed="false">Desktop</button><button type="button" data-filter="search" aria-pressed="false">Search</button><button type="button" data-filter="terminal" aria-pressed="false">Terminal</button><button type="button" data-filter="music" aria-pressed="false">Music</button><button type="button" data-filter="settings" aria-pressed="false">Settings</button></div><p id="gallery-count" class="gallery-count" aria-live="polite">23 examples</p>
-      <div class="gallery-grid">
-<button class="gallery-item" data-category="desktop settings" data-image="gallery/live-settings-shell.jpg" data-caption="Colors from your wallpaper · actual running application capture; in-app desktop previews are illustrative"><img src="gallery/live-settings-shell.jpg" alt="Pigment running with a blue wallpaper palette" loading="lazy" width="1182" height="792"><span>Colors from your wallpaper<small>Actual app capture · Shell</small></span></button>
-<button class="gallery-item" data-category="desktop settings" data-image="gallery/live-settings-warm.jpg" data-caption="A warmer atmosphere · actual running application capture; in-app desktop previews are illustrative"><img src="gallery/live-settings-warm.jpg" alt="Pigment running with a warm wallpaper palette" loading="lazy" width="1182" height="792"><span>A warmer atmosphere<small>Actual app capture · Scarlet Tree</small></span></button>
-<button class="gallery-item" data-category="desktop settings" data-image="gallery/live-settings-grass.jpg" data-caption="A softer palette · actual running application capture; in-app desktop previews are illustrative"><img src="gallery/live-settings-grass.jpg" alt="Pigment running with a neutral grass wallpaper palette" loading="lazy" width="1182" height="792"><span>A softer palette<small>Actual app capture · live wallpaper</small></span></button>
-<button class="gallery-item" data-category="desktop settings" data-image="gallery/live-appearance-shell.jpg" data-caption="Choose your desktop style · actual running application capture; in-app desktop previews are illustrative"><img src="gallery/live-appearance-shell.jpg" alt="Actual Pigment appearance page on Shell" loading="lazy" width="1182" height="792"><span>Choose your desktop style<small>Actual app capture · style preview</small></span></button>
-<button class="gallery-item" data-category="desktop settings" data-image="gallery/live-wallpaper-library.jpg" data-caption="The wallpaper library in use · actual running application capture; in-app desktop previews are illustrative"><img src="gallery/live-wallpaper-library.jpg" alt="Actual Pigment wallpaper page after applying Shell" loading="lazy" width="1182" height="792"><span>The wallpaper library in use<small>Actual app capture · Shell applied</small></span></button>
-        <button class="gallery-item large" data-category="search" data-image="gallery/globe-search.webp" data-caption="Globe search · production interface with authored demo results"><img src="gallery/globe-search.webp" alt="Globe search with app, document and web result callouts" loading="lazy" width="1440" height="900"><span>Globe search <small>Apps, files &amp; web · demo results</small></span></button>
-        <button class="gallery-item" data-category="desktop" data-image="gallery/window-overview.webp" data-caption="Window overview · production board controls with staged demo thumbnails"><img src="gallery/window-overview.webp" alt="Pigment window board with three demo thumbnails" loading="lazy" width="1440" height="900"><span>Window overview <small>Win + Tab · staged thumbnails</small></span></button>
-        <button class="gallery-item" data-category="desktop" data-image="gallery/quiet-desktop.webp" data-caption="Quiet preset · actual settings preview widget with illustrative content on Shell"><img src="gallery/quiet-desktop.webp" alt="Quiet desktop preset in purple and blue with clock and terminal" loading="lazy" width="1440" height="810"><span>A quieter desktop <small>Preset preview · Shell</small></span></button>
-        <button class="gallery-item" data-category="desktop" data-image="gallery/glass-desktop.webp" data-caption="Glass preset · actual settings preview widget with illustrative content on Scarlet Tree"><img src="gallery/glass-desktop.webp" alt="Glass desktop preset with calendar, clock and terminal on warm wallpaper" loading="lazy" width="1440" height="810"><span>Glass in warm colors <small>Preset preview · Scarlet Tree</small></span></button>
-        <button class="gallery-item" data-category="desktop terminal" data-image="gallery/desktop-terminal.png" data-caption="Blue desktop · staged renderer preview with demo system information"><img src="gallery/desktop-terminal.png" alt="Blue desktop with calendar, clock and terminal" loading="lazy" width="1440" height="900"><span>Desktop &amp; terminal <small>Renderer preview · Altai</small></span></button>
-        <button class="gallery-item" data-category="desktop" data-image="gallery/dock.png" data-caption="Wave dock · production painter with staged icons and simulated hover"><img src="gallery/dock.png" alt="Wave dock on orange and blue wallpaper" loading="lazy" width="1440" height="900"><span>Wave dock <small>Hover preview · Honeywave</small></span></button>
-        <button class="gallery-item" data-category="search" data-image="gallery/globe-calculator.webp" data-caption="Globe calculator · actual interface with the demo expression 128 × 32 = 4096"><img src="gallery/globe-calculator.webp" alt="Globe calculator displaying the result of 128 times 32" loading="lazy" width="1440" height="900"><span>Calculate without leaving <small>Globe interface · demo expression</small></span></button>
-        <button class="gallery-item" data-category="settings desktop" data-image="gallery/wallpaper-library.webp" data-caption="Wallpaper library · actual settings page with bundled wallpapers and demo selection"><img src="gallery/wallpaper-library.webp" alt="Pigment wallpaper browser with color filters and bundled wallpaper thumbnails" loading="lazy" width="1140" height="720"><span>Find your wallpaper <small>Built-in library · color filters</small></span></button>
-        <button class="gallery-item" data-category="terminal" data-image="gallery/ribbon-terminal.gif" data-caption="Ribbon logo · actual 3D terminal frame generator in a preview scene"><img src="gallery/ribbon-terminal.png" alt="The new Ribbon logo rendered as 3D ASCII with the flat turquoise mark beside it" loading="lazy" width="900" height="640"><span>The new Ribbon mark <small>3D animation · renderer preview</small></span></button>
-        <button class="gallery-item" data-category="terminal" data-image="gallery/terminal-shell.webp" data-caption="Previous logo · actual frame generator in a staged terminal scene on Shell"><img src="gallery/terminal-shell.webp" alt="Previous pink rotating ASCII logo in a wallpaper-colored terminal" loading="lazy" width="1440" height="900"><span>Another terminal palette <small>Previous logo · Shell</small></span></button>
-        <button class="gallery-item" data-category="terminal" data-image="gallery/matrix.png" data-caption="Warm terminal · illustrative character rain, not a live cmatrix capture"><img src="gallery/matrix.png" alt="Terminal styling with orange and pink wallpaper" loading="lazy" width="1440" height="900"><span>A warmer palette <small>Styling preview · Scarlet Tree</small></span></button>
-        <button class="gallery-item" data-category="settings desktop" data-image="gallery/appearance-en.png" data-caption="Desktop styles · actual settings page with demo configuration"><img src="gallery/appearance-en.png" alt="Pigment desktop style settings in English" loading="lazy" width="830" height="800"><span>Desktop styles <small>Actual settings · demo configuration</small></span></button>
-        <button class="gallery-item large" data-category="music terminal" data-image="gallery/music-preset-live.jpg" data-caption="Music preset · actual desktop recording"><img src="gallery/music-preset-live.jpg" alt="Music preset on the forest desktop" loading="lazy" width="1600" height="900"><span>Music preset <small>Actual desktop recording · forest</small></span></button>
-        <button class="gallery-item" data-category="music terminal" data-image="gallery/cava.png" data-caption="CAVA · production spectrum renderer with a demo audio signal"><img src="gallery/cava.png" alt="CAVA audio bars with peaks" loading="lazy" width="1440" height="900"><span>CAVA <small>Peak bars · demo audio</small></span></button>
-        <button class="gallery-item" data-category="music terminal" data-image="gallery/vis.png" data-caption="VIS · production spectrum renderer with a demo audio signal"><img src="gallery/vis.png" alt="VIS symmetrical bass wave" loading="lazy" width="1440" height="900"><span>VIS <small>Bass wave · demo audio</small></span></button>
-        <button class="gallery-item" data-category="music settings" data-image="gallery/music-settings.webp" data-caption="Music settings · actual settings page with an authored demo track"><img src="gallery/music-settings.webp" alt="Pigment settings for player mode, monitor and size" loading="lazy" width="1000" height="900"><span>Make the player yours <small>Modes, size &amp; placement</small></span></button>
-        <button class="gallery-item" data-category="music settings" data-image="gallery/lyrics-settings.webp" data-caption="Lyrics settings · actual settings page with an authored demo track and lyrics"><img src="gallery/lyrics-settings.webp" alt="Pigment lyric settings showing timing offset and word reveal options" loading="lazy" width="1000" height="900"><span>Tune the lyrics <small>Timing, word reveal &amp; LRC import</small></span></button>
-        <button class="gallery-item" data-category="settings" data-image="gallery/installer-en.png" data-caption="Pigment setup · native installer in preview mode"><img src="gallery/installer-en.png" alt="The branded Pigment installer" loading="lazy" width="980" height="700"><span>A home from the start <small>Installer preview</small></span></button>
-      </div>
-      <p class="gallery-credit">Settings captures, renderer previews and an actual desktop recording. Demo content is labeled. Gallery artwork and wallpaper credits: <a href="https://github.com/Ddrakkx/pigment/blob/main/docs/GALLERY.md">credits &amp; licenses</a>.</p>
-    </section>
-    <section class="usage wrap section" aria-labelledby="usage-title">
-      <div class="section-heading"><p class="eyebrow">Try it your way</p><h2 id="usage-title">A few ways<br>to put it to work.</h2></div>
-      <div class="usage-grid">
-        <article><span class="feature-number">01 / EVERYDAY</span><h3>A calmer workspace.</h3><p>Choose a wallpaper, try the Quiet style and keep the widgets you need. Use the dock to reach your apps.</p><a class="text-link" href="#desktop">See desktop options</a></article>
-        <article><span class="feature-number">02 / FIND &amp; SWITCH</span><h3>Less window hunting.</h3><p>Press <kbd>Win + Tab</kbd> for the window board, or <kbd>Ctrl + Alt + Space</kbd> to find an app, file or setting through the globe.</p><a class="text-link" href="#search">See globe search</a></article>
-        <article><span class="feature-number">03 / LISTENING</span><h3>Make room for music.</h3><p>Run <code>music</code> in the terminal for a listening layout. Adjust lyrics timing, import an LRC, or use the visualizers on their own.</p><a class="text-link" href="#demo">Watch the recording</a></article>
+      <div class="stage" id="stage">
+        <h3 class="stage-title">Try it: one desktop, five wallpapers</h3>
+        <div class="screen" aria-live="polite">
+          <img class="shot is-active" src="shots/desk-sea.jpg" srcset="shots/desk-sea-sm.jpg 800w, shots/desk-sea.jpg 1600w" sizes="(max-width: 900px) 100vw, 80vw" width="1600" height="1080" alt="Underwater wallpaper; the terminal and dock are tinted blue by Pigment" loading="lazy">
+        </div>
+        <div class="walls" role="radiogroup" aria-label="Try a wallpaper"></div>
+        <p class="stage-note">Real captures from one PC. Only the wallpaper changes between shots; the page takes its accent from the same palette.</p>
       </div>
     </section>
-    <section id="demo" class="demo wrap section">
-      <div class="section-intro"><p class="eyebrow">One way to use Pigment</p><h2>A desktop<br>for listening.</h2><p>This 24-second recording shows the music preset on one forest wallpaper. Run <code>music</code> to arrange ordinary Windows Terminal windows around the player, and <code>music off</code> when you’re done.</p><p>You can use the dock, window overview, search and widgets without this preset.</p></div>
-      <figure class="video-frame"><video controls playsinline preload="none" poster="gallery/music-preset-live.jpg" width="1600" height="900"><source src="site-assets/music-preset.mp4" type="video/mp4">Your browser cannot play this video. <a href="site-assets/music-preset.mp4">Download the demo</a>.</video><figcaption>Actual desktop recording. Wallpaper: Warrior's Tomb | Forest Sounds, from Wallpaper Engine. Wallpaper and music are demo content, not included.</figcaption></figure>
+
+    <section id="terminal" class="terminal wrap">
+      <div class="section-head">
+        <p class="eyebrow">// windows terminal</p>
+        <h2>A terminal that<br>belongs to your desktop.</h2>
+        <p>Keep using ordinary Windows Terminal. Pigment gives it wallpaper colors, blur and a rotating ASCII mark — plus a few toys.</p>
+        <div class="commands"><code>neofetch</code><code>cmatrix</code><code>cava</code><code>vis</code><code>music</code></div>
+      </div>
+      <div class="term-grid"></div>
+      <p class="fine">Same terminal, five wallpapers. The user and host name are replaced for privacy; everything else is as captured.</p>
     </section>
-    <section id="download" class="download-section section">
-      <div class="wrap download-inner"><div class="download-copy"><p class="eyebrow">Start with your own desktop</p><h2>Make room<br>for your setup.</h2><p>Pigment is free and still in beta. Try the tools that interest you, and tell us what needs work.</p><span class="release-label">0.1.6 beta · Windows 11 x64</span></div><div class="download-box"><h3>Get Pigment</h3><p>Choose the installer for a regular setup, or portable to run it from a folder.</p><a class="button primary download-button" href="https://github.com/Ddrakkx/pigment/releases/download/v0.1.6-beta/Pigment-0.1.6-beta-setup-x64.exe">Download installer <span>90 MB · .exe</span></a><a class="button secondary download-button" href="https://github.com/Ddrakkx/pigment/releases/download/v0.1.6-beta/Pigment-0.1.6-beta-windows-x64.zip">Download portable <span>90 MB · .zip</span></a><p class="download-note">The installer is unsigned and experimental. Windows may show a security warning. A clean install, update and uninstall cycle has not yet been verified.</p><div class="download-links"><a href="https://github.com/Ddrakkx/pigment/releases">All releases</a><a href="https://github.com/Ddrakkx/pigment/releases/download/v0.1.6-beta/SHA256SUMS.txt">Checksums</a></div></div></div>
+
+    <section id="tools" class="tools wrap">
+      <div class="section-head">
+        <p class="eyebrow">// and the rest</p>
+        <h2>Small tools that<br>wear the same colors.</h2>
+      </div>
+      <div class="bento">
+        <article class="tile tile-globe">
+          <div class="tile-copy"><h3>Globe search</h3><p>Apps, windows, settings and files on one side, the web on the other, a calculator on top.</p><p class="keys"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>Space</kbd></p></div>
+          <video muted loop playsinline preload="none" poster="site-assets/globe.jpg" width="1920" height="1080" data-autoplay aria-label="Screen recording: the globe opens, finds Notepad and calculates 128*32"><source src="site-assets/globe.mp4" type="video/mp4"></video>
+        </article>
+        <article class="tile tile-music">
+          <div class="tile-copy"><h3>Music on the desktop</h3><p>Player, synced lyrics and visualizers. Type <code>music</code> and terminals arrange themselves around the player.</p></div>
+          <video muted loop playsinline preload="none" poster="site-assets/music-blue.jpg" width="1920" height="1080" data-autoplay aria-label="Screen recording: the music layout with player, synced lyrics, clock, CAVA, VIS and Matrix rain in blue wallpaper colors"><source src="site-assets/music-blue.mp4" type="video/mp4"></video>
+        </article>
+        <article class="tile tile-board">
+          <div class="tile-copy"><h3>Window board</h3><p>An endless canvas of live windows. Zoom, pan, drag them around, or lift one and work in it right there. The layout is remembered.</p><p class="keys"><kbd>Win</kbd><kbd>Tab</kbd></p></div>
+          <video muted loop playsinline preload="none" poster="site-assets/board.jpg" width="1920" height="1080" data-autoplay aria-label="Screen recording: the window board zooms out over live window thumbnails, then a Spotify window is lifted and opened"><source src="site-assets/board.mp4" type="video/mp4"></video>
+        </article>
+        <article class="tile tile-dock">
+          <div class="tile-copy"><h3>Wave dock</h3><p>Pinned and running apps with a magnifying wave, its own Start menu and search.</p><p class="keys"><kbd>Win</kbd></p></div>
+          <video muted loop playsinline preload="none" poster="site-assets/dock.jpg" width="560" height="80" data-autoplay aria-label="Screen recording: dock icons swell as the cursor passes over them"><source src="site-assets/dock.mp4" type="video/mp4"></video>
+          <div class="tile-copy tile-more"><h3>Clock &amp; widgets</h3><p>Clock, calendar and glass panels per monitor. Hidden automatically when the wallpaper has its own clock.</p>
+          <h3>Updates in the app</h3><p>One button checks the release, verifies the download and restarts. Uninstall restores your previous look.</p></div>
+        </article>
+      </div>
     </section>
-    <section class="faq wrap section">
-      <div class="section-heading"><p class="eyebrow">Before you install</p><h2>A few useful things.</h2></div>
+
+    <section id="download" class="download">
+      <div class="wrap download-inner">
+        <div class="download-copy">
+          <p class="eyebrow">// get it</p>
+          <h2>Make room<br>for your setup.</h2>
+          <p>Pigment is free and in beta. Try the parts you like and tell us what needs work.</p>
+          <span class="release">0.1.7 beta · Windows 11 x64</span>
+        </div>
+        <div class="download-box">
+          <a class="button primary wide" href="https://github.com/Ddrakkx/pigment/releases/download/v0.1.7-beta/Pigment-0.1.7-beta-setup-x64.exe">Download installer <span>89 MB · .exe</span></a>
+          <a class="button secondary wide" href="https://github.com/Ddrakkx/pigment/releases/download/v0.1.7-beta/Pigment-0.1.7-beta-windows-x64.zip">Download portable <span>89 MB · .zip</span></a>
+          <p class="note">The installer is unsigned, so Windows may show a security warning. Portable runs from any folder.</p>
+          <div class="download-links"><a href="https://github.com/Ddrakkx/pigment/releases">All releases</a><a href="https://github.com/Ddrakkx/pigment/releases/download/v0.1.7-beta/SHA256SUMS.txt">Checksums</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq wrap">
+      <div class="section-head"><p class="eyebrow">// before you install</p><h2>A few useful things.</h2></div>
       <div class="faq-list">
-        <details><summary>Do I need Wallpaper Engine?</summary><p>No. The dock, widgets and terminal work with static wallpapers. Live wallpaper features need Wallpaper Engine. The forest wallpaper in the video is a separate Workshop wallpaper.</p></details>
-        <details><summary>Are the lyrics perfectly timed word by word?</summary><p>Exact word timestamps are used when available. For ordinary LRC with line timestamps, word reveal is approximate. You can change the reveal mode and set a timing offset for each track. Some tracks have no available lyrics.</p></details>
-        <details><summary>How do updates work?</summary><p>Use Updates inside Pigment to check for a release and update with one button. Nothing is downloaded or installed until you press Update. You can also download a newer build here.</p></details>
-        <details><summary>What happens when I uninstall?</summary><p>The installer offers to restore backed-up appearance settings and preserves your Pigment settings. If restoration fails, removal stops and produces a report. The full process still needs testing on clean Windows systems. <a href="https://github.com/Ddrakkx/pigment/blob/main/docs/INSTALLER.md">Read the installer notes</a>.</p></details>
-        <details><summary>How can I help with the beta?</summary><p><a href="https://github.com/Ddrakkx/pigment/issues">Report a bug or suggest a feature</a>. Include your Windows version, monitor setup and the steps that led to the issue. Screenshots are helpful; remove private information before sharing.</p></details>
+        <details><summary>Do I need Wallpaper Engine?</summary><p>No. Pigment works with ordinary Windows wallpapers and has a small built-in library. With Wallpaper Engine installed it also follows live wallpapers. The wallpapers on this page are Workshop items and do not come with Pigment.</p></details>
+        <details><summary>Are the lyrics perfectly timed word by word?</summary><p>Exact word timestamps are used when available. For ordinary LRC with line timestamps, word reveal is approximate. You can change the reveal mode and set a timing offset for each track.</p></details>
+        <details><summary>How do updates work?</summary><p>Open Updates inside Pigment to check for a release and update with one button. Nothing is downloaded or installed until you press Update.</p></details>
+        <details><summary>What happens when I uninstall?</summary><p>The uninstaller offers to restore the appearance settings Pigment backed up and keeps your Pigment settings. <a href="https://github.com/Ddrakkx/pigment/blob/main/docs/INSTALLER.md">Installer notes</a>.</p></details>
+        <details><summary>How can I help with the beta?</summary><p><a href="https://github.com/Ddrakkx/pigment/issues">Report a bug or suggest a feature</a> — include your Windows version, monitor setup and the steps that led to the issue.</p></details>
       </div>
     </section>
   </main>
-  <footer class="wrap site-footer"><a class="brand footer-brand" href="#"><img src="site-assets/logo.svg?v=ribbon1" alt="" width="40" height="40">Pigment</a><p>Made by <a href="https://github.com/Ddrakkx">Ddrakkx</a>. Still growing.</p><div><a href="https://t.me/pigment_desktop">Telegram</a><a href="https://github.com/Ddrakkx/pigment">GitHub</a><a href="https://github.com/Ddrakkx/pigment/issues">Feedback</a><a href="https://github.com/Ddrakkx/pigment/blob/main/THIRD_PARTY_NOTICES.md">Credits</a></div></footer>
-  <dialog id="image-dialog" aria-labelledby="image-caption"><div class="dialog-toolbar"><button id="image-previous" aria-label="Previous image">← Previous</button><span id="image-position" aria-live="polite"></span><button id="image-next" aria-label="Next image">Next →</button><button class="dialog-close" aria-label="Close image">Close</button></div><img id="large-image" src="gallery/music-preset-live.jpg" alt=""><p id="image-caption"></p></dialog>
+
+  <footer class="site-footer wrap">
+    <a class="brand" href="#"><span class="mark" aria-hidden="true"></span><span>pigment</span></a>
+    <p>Made by <a href="https://github.com/Ddrakkx">Ddrakkx</a>. Wallpapers in the captures: <span class="credits"></span> from the Steam Workshop, by their authors.</p>
+    <div><a href="https://t.me/pigment_desktop">Telegram</a><a href="https://github.com/Ddrakkx/pigment">GitHub</a><a href="https://github.com/Ddrakkx/pigment/issues">Feedback</a><a href="https://github.com/Ddrakkx/pigment/blob/main/THIRD_PARTY_NOTICES.md">Credits</a></div>
+  </footer>
 </body>
 </html>

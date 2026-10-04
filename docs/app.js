@@ -1,95 +1,101 @@
 'use strict';
-const imageDialog = document.querySelector('#image-dialog');
-const largeImage = document.querySelector('#large-image');
-const imageCaption = document.querySelector('#image-caption');
-const galleryItems = [...document.querySelectorAll('.gallery-item')];
-const galleryFilters = document.querySelector('.gallery-filters');
-const galleryCount = document.querySelector('#gallery-count');
-const imagePosition = document.querySelector('#image-position');
-let viewerItems = [];
-let viewerIndex = 0;
-function showImage(index) {
-  viewerIndex = (index + viewerItems.length) % viewerItems.length;
-  const button = viewerItems[viewerIndex];
-  largeImage.src = button.dataset.image;
-  largeImage.alt = button.querySelector('img').alt;
-  imageCaption.textContent = button.dataset.caption;
-  imagePosition.textContent = `${viewerIndex + 1} / ${viewerItems.length}`;
+// Real captures: same PC, same terminal, only the wallpaper changes.
+// Swatches are sampled from the palette Pigment printed in the terminal.
+const WALLS = [
+  { key: 'sea', title: 'Sanctuary under the sea', id: '2389298730', swatches: ['#13283F', '#3076B2', '#3C94D1', '#2A5782', '#1E4C76', '#71C8EA'] },
+  { key: 'samurai', title: 'Samurai — Motion', id: '1436407576', swatches: ['#2A170C', '#533826', '#736859', '#968674', '#B8A698', '#F0EBE5'] },
+  { key: 'night', title: 'Night City', id: '2281052567', swatches: ['#000000', '#190D10', '#B1607A', '#EE8FB4', '#010001', '#000001'] },
+  { key: 'misty', title: 'Misty Sea', id: '3765081478', swatches: ['#000301', '#001209', '#032618', '#073F2B', '#124F39', '#2A6851'] },
+  { key: 'forest', title: "Warrior's Tomb", id: '2794072974', swatches: ['#0C1A1B', '#132222', '#162A27', '#1E2F2F', '#283B36', '#435744'] },
+];
+
+function hsl(hex) {
+  const n = parseInt(hex.slice(1), 16);
+  const r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2;
+  if (max === min) return [0, 0, l];
+  const d = max - min, s = l > .5 ? d / (2 - max - min) : d / (max + min);
+  const h = max === r ? (g - b) / d + (g < b ? 6 : 0) : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return [h * 60, s, l];
 }
-document.querySelectorAll('[data-image]').forEach(button => {
-  button.addEventListener('click', () => {
-    viewerItems = button.classList.contains('gallery-item')
-      ? galleryItems.filter(item => !item.hidden) : galleryItems;
-    let index = viewerItems.findIndex(item => item.dataset.image === button.dataset.image);
-    if (index < 0) { viewerItems = [button, ...viewerItems]; index = 0; }
-    showImage(index);
-    imageDialog.showModal();
-  });
-});
-galleryFilters.hidden = false;
-galleryFilters.querySelectorAll('[data-filter]').forEach(button => {
-  button.addEventListener('click', () => {
-    const category = button.dataset.filter;
-    galleryItems.forEach(item => {
-      item.hidden = category !== 'all' && !item.dataset.category.split(' ').includes(category);
-    });
-    galleryFilters.querySelectorAll('button').forEach(item => {
-      item.setAttribute('aria-pressed', String(item === button));
-    });
-    const count = galleryItems.filter(item => !item.hidden).length;
-    galleryCount.textContent = `${count} ${count === 1 ? 'example' : 'examples'}`;
-  });
-});
-document.querySelector('#image-previous').addEventListener('click', () => showImage(viewerIndex - 1));
-document.querySelector('#image-next').addEventListener('click', () => showImage(viewerIndex + 1));
-imageDialog.addEventListener('keydown', event => {
-  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-    event.preventDefault();
-    showImage(viewerIndex + (event.key === 'ArrowLeft' ? -1 : 1));
-  }
-});
-document.querySelector('.dialog-close').addEventListener('click', () => imageDialog.close());
-imageDialog.addEventListener('click', event => {
-  if (event.target === imageDialog) {
-    const bounds = imageDialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) imageDialog.close();
-  }
+
+// The same rule Pigment uses for the terminal: the most colorful swatch,
+// lifted so it glows on a dark background.
+function accentOf(wall) {
+  const [h, s] = wall.swatches.map(hsl).sort((a, b) => b[1] * (1 - Math.abs(b[2] - .5)) - a[1] * (1 - Math.abs(a[2] - .5)))[0];
+  return `hsl(${h.toFixed(0)} ${Math.max(s * 100, 22).toFixed(0)}% 68%)`;
+}
+
+const stage = document.querySelector('#stage');
+const screen = stage.querySelector('.screen');
+const walls = stage.querySelector('.walls');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+let current = 0;
+let timer = null;
+
+WALLS.forEach((wall, index) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.setAttribute('role', 'radio');
+  button.setAttribute('aria-checked', String(index === 0));
+  button.innerHTML = `<img src="shots/desk-${wall.key}-sm.jpg" alt="" width="800" height="540" loading="lazy">` +
+    `<span class="wall-name">${wall.title}</span><span class="swatches">${wall.swatches.map(c => `<i style="background:${c}"></i>`).join('')}</span>`;
+  button.addEventListener('click', () => { stop(); show(index); });
+  walls.append(button);
 });
 
-const globe = document.querySelector('#globe-animation');
-const globeToggle = document.querySelector('#globe-toggle');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-let globeVisible = false;
-let globeRequested = !reducedMotion.matches;
-let globeLoaded = false;
-function updateGlobe() {
-  if (globeRequested && globeVisible && !document.hidden) {
-    if (!globeLoaded) {
-      const source = globe.querySelector('source');
-      source.src = source.dataset.src;
-      globe.load();
-      globeLoaded = true;
-    }
-    globe.play().catch(() => { globeRequested = false; syncGlobeButton(); });
-  } else {
-    globe.pause();
-  }
-  syncGlobeButton();
+function show(index) {
+  current = index;
+  const wall = WALLS[index];
+  document.documentElement.style.setProperty('--accent', accentOf(wall));
+  walls.querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-checked', String(i === index)));
+  const next = new Image();
+  next.className = 'shot';
+  next.width = 1600; next.height = 1080;
+  next.alt = `${wall.title} wallpaper; Pigment recolored the terminal and dock to match`;
+  next.srcset = `shots/desk-${wall.key}-sm.jpg 800w, shots/desk-${wall.key}.jpg 1600w`;
+  next.sizes = '(max-width: 900px) 100vw, 60vw';
+  next.src = `shots/desk-${wall.key}.jpg`;
+  next.decode().catch(() => {}).then(() => {
+    screen.append(next);
+    requestAnimationFrame(() => next.classList.add('is-active'));
+    const old = [...screen.querySelectorAll('.shot')].filter(s => s !== next);
+    setTimeout(() => old.forEach(s => s.remove()), 900);
+  });
 }
-function syncGlobeButton() {
-  globeToggle.textContent = globeRequested ? 'Pause rotation' : 'Play rotation';
+
+function stop() { clearInterval(timer); timer = null; }
+function start() {
+  if (reduced.matches || timer) return;
+  timer = setInterval(() => show((current + 1) % WALLS.length), 4500);
 }
-globeToggle.hidden = false;
-globeToggle.addEventListener('click', () => {
-  globeRequested = !globeRequested;
-  updateGlobe();
+stage.addEventListener('pointerenter', stop);
+stage.addEventListener('focusin', stop);
+new IntersectionObserver(entries => entries[0].isIntersecting ? start() : stop(), { threshold: .3 }).observe(stage);
+document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+show(0);
+WALLS.slice(1).forEach(w => { const i = new Image(); i.src = `shots/desk-${w.key}-sm.jpg`; });
+
+// Terminal close-ups, one per wallpaper.
+const grid = document.querySelector('.term-grid');
+WALLS.forEach(wall => {
+  const figure = document.createElement('figure');
+  figure.style.setProperty('--tint', accentOf(wall));
+  figure.innerHTML = `<img src="shots/term-${wall.key}.jpg" width="960" height="618" loading="lazy" alt="Windows Terminal with the Pigment logo and system info in ${wall.title} colors">` +
+    `<figcaption>${wall.title}</figcaption>`;
+  grid.append(figure);
 });
-new IntersectionObserver(entries => {
-  globeVisible = entries[0].isIntersecting;
-  updateGlobe();
-}, { threshold: 0.15 }).observe(globe);
-document.addEventListener('visibilitychange', updateGlobe);
-reducedMotion.addEventListener('change', () => {
-  globeRequested = !reducedMotion.matches;
-  updateGlobe();
+
+// Recordings play only while on screen; reduced motion leaves them as posters.
+const videos = [...document.querySelectorAll('video[data-autoplay], .hero-video video')];
+const watcher = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
+  if (isIntersecting && !reduced.matches && !document.hidden) target.play().catch(() => {});
+  else target.pause();
+}), { threshold: .25 });
+videos.forEach(video => {
+  if (reduced.matches) { video.removeAttribute('autoplay'); video.pause(); video.controls = true; }
+  watcher.observe(video);
 });
+
+document.querySelector('.credits').innerHTML = WALLS.map(w =>
+  `<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=${w.id}">${w.title}</a>`).join(', ');

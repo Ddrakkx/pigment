@@ -1,3 +1,13 @@
+# Pigment 0.1.7 beta
+
+- New Triad mark: three interlocking letters P. It replaces Ribbon in the app icon, tray, window header, installer artwork and browser-extension icon.
+- The terminal logo now turns clockwise around its own centre, facing you, instead of spinning around a vertical axis off to one side.
+- The logo is rendered at the size of the pane (12 to 36 rows). In the `music` layout it no longer shrinks to a torn, single-colour sketch; it fills its window, or sits beside the system info when that keeps it large.
+- Live Wallpaper Engine wallpapers: Pigment still recolors instantly from the preview, then checks what the engine actually draws a few seconds later and every ten minutes. Scenes with a day and night cycle or custom colours now get the right palette.
+
+Application and installer builds are included. No new automated tests were run; a complete installation, update and uninstall cycle has not been exercised for this beta.
+
+---
 # Pigment 0.1.6 beta
 
 - Removed the long front-facing pause from the terminal logo.
