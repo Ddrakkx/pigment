@@ -1,3 +1,11 @@
+# Pigment 0.1.6 beta
+
+- Removed the long front-facing pause from the terminal logo.
+- Restored a uniform 5.76-second full turn, matching the previous rotation speed.
+- The Ribbon shape, 3D shading and wallpaper colors stay the same.
+
+---
+
 # Pigment 0.1.5 beta
 
 - New turquoise Ribbon identity: app icons, window marks, setup artwork and browser-extension icon share one vector outline.

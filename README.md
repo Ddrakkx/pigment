@@ -15,7 +15,7 @@ Wallpaper colors, glass widgets, a wave dock, and a terminal that belongs to you
 **English** · [Русский](README.ru.md)
 
 **[Website](https://ddrakkx.github.io/pigment/)** ·
-**[Download](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.5-beta)** ·
+**[Download](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.6-beta)** ·
 [Gallery](docs/GALLERY.md) · [Report a bug](https://github.com/Ddrakkx/pigment/issues)
 
 [![Pigment music preset — live desktop recording](docs/gallery/music-preset-live.jpg)](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)
@@ -128,12 +128,12 @@ The update installation cycle has not yet been verified on a clean Windows syste
 
 ## Install
 
-Download from the [beta release](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.5-beta):
+Download from the [beta release](https://github.com/Ddrakkx/pigment/releases/tag/v0.1.6-beta):
 
 | Download | Start here |
 | --- | --- |
-| **Pigment-0.1.5-beta-setup-x64.exe** | Experimental branded installer; per-user install, Start menu, optional desktop shortcut |
-| **Pigment-0.1.5-beta-windows-x64.zip** | Portable build: extract the entire archive, then run `Pigment/Pigment.exe` |
+| **Pigment-0.1.6-beta-setup-x64.exe** | Experimental branded installer; per-user install, Start menu, optional desktop shortcut |
+| **Pigment-0.1.6-beta-windows-x64.zip** | Portable build: extract the entire archive, then run `Pigment/Pigment.exe` |
 
 No Python installation is needed. Keep `_internal` next to the portable exe.
 In Pigment, open **Appearance → Glass**, choose a display, and apply the style.
