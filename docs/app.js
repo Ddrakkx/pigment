@@ -86,14 +86,21 @@ WALLS.forEach(wall => {
   grid.append(figure);
 });
 
-// Recordings play only while on screen; reduced motion leaves them as posters.
+// Recordings play only while on screen. Reduced motion, phones and data saver
+// keep the poster with a play button: the hero alone is ~14 MB.
+const saveData = !!(navigator.connection && navigator.connection.saveData);
+const small = matchMedia('(max-width: 640px)').matches;
 const videos = [...document.querySelectorAll('video[data-autoplay], .hero-video video')];
 const watcher = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting }) => {
-  if (isIntersecting && !reduced.matches && !document.hidden) target.play().catch(() => {});
+  if (isIntersecting && !document.hidden) target.play().catch(() => {});
   else target.pause();
 }), { threshold: .25 });
 videos.forEach(video => {
-  if (reduced.matches) { video.removeAttribute('autoplay'); video.pause(); video.controls = true; }
+  if (reduced.matches || saveData || small) {
+    video.controls = true;               // plays only when the visitor asks
+    return;
+  }
+  if (video.closest('.hero-video')) video.preload = 'auto';
   watcher.observe(video);
 });
 
