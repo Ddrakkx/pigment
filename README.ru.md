@@ -19,9 +19,9 @@
 [Инструкция](docs/GUIDE.md) ·
 [Сообщить о баге](https://github.com/Ddrakkx/pigment/issues)
 
-[![Музыкальный пресет Pigment — запись рабочего стола](docs/gallery/music-preset-live.jpg)](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)
+[![Pigment перекрашивает весь рабочий стол под новые обои](docs/site-assets/recolor.jpg)](https://ddrakkx.github.io/pigment/)
 
-**[▶ Смотреть живое демо · 24 секунды](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)**
+**[▶ Смотреть перекраску на сайте · 34 секунды](https://ddrakkx.github.io/pigment/)**
 
 </div>
 

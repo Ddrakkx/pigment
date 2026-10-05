@@ -4,9 +4,9 @@
 
 ## Live desktop demo
 
-[![Live music preset recording](gallery/music-preset-live.jpg)](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)
+[![Pigment recolors the whole desktop as the wallpaper changes](site-assets/recolor.jpg)](https://ddrakkx.github.io/pigment/)
 
-**[▶ Watch the 24-second video · 1080p / 60 fps](https://github.com/Ddrakkx/pigment/releases/download/v0.1.3-beta/Pigment-music-preset.mp4)**
+**[▶ Watch the 34-second recording on the website](https://ddrakkx.github.io/pigment/)**
 
 An actual desktop recording showing `music` and `music off`, ordinary Windows
 Terminal windows, the rotating ASCII logo, Matrix, CAVA, VIS, a terminal clock
